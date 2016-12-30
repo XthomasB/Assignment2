@@ -1,7 +1,18 @@
-/* main JavaScript file */
+/**
+ * FileName: app.js
+ *
+ * @author Xavier Thomas
+ * @start date December 12, 2016
+ *
+ * website: comp125-s2016-lesson5.azurewebsites.net
+ * @description This file is the main javascript file for the web site
+ */
+
 // IIFE - Immediately Invoked Function Expression
-(function(){
+(function($){
     "use strict";
+
+    
     
     // define an array of HTML elements
     var paragraphElements = [];
@@ -70,38 +81,31 @@
     console.log("Send Button Clicked!");
   }
   
-  //create reference to firstname value
-  var name  = document.getElementById("name");
   
-  //create reference to email value
-  var email  = document.getElementById("email");
-  
-  //create ref to Phone Number
-  var phone = document.getElementById("phone");
-  
-    //create ref to the message field
-  var message = document.getElementById("message");
-  
-  // create ref to the contact form 
-  var contactForm = document.getElementById("contactForm");
-  
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    console.log("Form is now Submitted to the Console!");
-    showFormInput();
-    contactForm.reset();
-  });
-  function showFormInput() {
-    console.log("-----------------");
-    console.log("Name: " + name.value);
-    console.log("-----------------");
-    console.log("Email: " + email.value);
-    console.log("------------------");
-    console.log("Phone: " + phone.value);
-    console.log("------------------");
-    console.log("Message: " + message.value);
-    console.log("------------------");
 
-    
-  }
-})();
+  //video player
+  wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0
+      }
+    );
+    wow.init();
+
+    		//video bg
+		$(".bg-player").mb_YTPlayer();
+		
+	$("#js-rotating").Morphext({
+		// Animation type (refer to Animate.css for a list of available animations)
+		animation: "fadeInDown",
+		// An array of words to rotate are created based on this separator. Change it if you wish to separate the words differently (e.g. So Simple | Very Doge | Much Wow | Such Cool)
+		separator: ",",
+		// The delay between each word in milliseconds
+		speed: 3000
+	});
+
+})(jQuery);
+$(window).load(function() {
+	$(".loader").delay(300).fadeOut();
+	$("#page-loader").delay(500).fadeOut("slow");
+});
