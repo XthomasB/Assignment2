@@ -81,31 +81,4 @@
     console.log("Send Button Clicked!");
   }
   
-  
-
-  //video player
-  wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       0
-      }
-    );
-    wow.init();
-
-    		//video bg
-		$(".bg-player").mb_YTPlayer();
-		
-	$("#js-rotating").Morphext({
-		// Animation type (refer to Animate.css for a list of available animations)
-		animation: "fadeInDown",
-		// An array of words to rotate are created based on this separator. Change it if you wish to separate the words differently (e.g. So Simple | Very Doge | Much Wow | Such Cool)
-		separator: ",",
-		// The delay between each word in milliseconds
-		speed: 3000
-	});
-
-})(jQuery);
-$(window).load(function() {
-	$(".loader").delay(300).fadeOut();
-	$("#page-loader").delay(500).fadeOut("slow");
 });
